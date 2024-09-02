@@ -69,6 +69,10 @@ The firmware patch activates three ioctls:
 
 ## Transmitting a Signal 
 
-The directory payload_generation contains the MATLAB script generate_frame.m that generates a Wi-Fi beacon frame with SSID MyCovertChannel. The generated IQ samples are written to a bash script that calls nexutil from the nexmon.org project to load the samples into the Wi-Fi chip's Template RAM by using ioctls. You can either generate your own signals or use the example myframe.sh file for transmitting the generated Wi-Fi frame. To this end, follow the Getting Started instructions below to install our patched Wi-Fi firmware on a Nexus 5 smartphone. Then, you need to copy myframe.sh to a directory that allows execution (such as /su/xbin/). To load the samples and start a single transmission, simply executute the bash script and observe the results by listening with a Wi-Fi sniffer on channel 1. A suitable Wireshark filter is wlan.addr == 82:7b:be:f0:96:e0. Of course, you are not limited to transmitting handcrafted Wi-Fi signals, you can transmit whatever you like in the 2.4 and 5 GHz bands. Nevertheless, you have to obey your local laws for transmitting signals, that might prohibit you to transmit any signal at all.
+The directory payload_generation contains the MATLAB script generate_frame.m that generates a Wi-Fi beacon frame with SSID MyCovertChannel. 
+
+The generated IQ samples are written to a bash script that calls nexutil from the nexmon.org project to load the samples into the Wi-Fi chip's Template RAM by using ioctls. You can either generate your own signals or use the example myframe.sh file for transmitting the generated Wi-Fi frame. Copy myframe.sh to a directory that allows execution (such as /su/xbin/). To load the samples and start a single transmission, simply executute the bash script and observe the results by listening with a Wi-Fi sniffer on channel 1. 
+
+A suitable Wireshark filter is wlan.addr == 82:7b:be:f0:96:e0. Of course, you are not limited to transmitting handcrafted Wi-Fi signals, you can transmit whatever you like in the 2.4 and 5 GHz bands. Nevertheless, you have to obey your local laws for transmitting signals, that might prohibit you to transmit any signal at all.
 
 
